@@ -84,7 +84,7 @@ body {
     background: var(--color-background-primary);
     color: var(--color-font-primary);
 
-    --size-ratio: 1.01;
+    --size-ratio: 1.13;
     --size-one-down: calc( 1rem / var(--size-ratio) );
     --size-five-up: calc( var(--size-four-up)* var(--size-ratio) );
     --size-four-up: calc( var(--size-three-up) * var(--size-ratio) );
@@ -226,7 +226,7 @@ nav {
 
 .banner {
     width: 100%;
-    height: 600px;
+    height: 76rem;
     overflow: hidden;
     position: relative;
 }
@@ -253,20 +253,25 @@ nav {
 
 .banner .intro {
     display: block;
-    font-size: 24px;
+    font-size: var(--size-three-up);
     z-index: 2;
     position: relative;
-    width: 700px;
-    padding: 20px 10px;
+    width: 56rem;
+    padding: 1.5rem 1rem;
     background-color: transparent;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-weight: bold;
     background: rgba(225, 225, 225, 0.5);
     height: auto;
 }
+.intro{
+    margin-top: 18rem;
+}
+/*================================================================
+    banner mobile
+===============================================================*/
 
 .intro .share {
     position: relative;
@@ -307,7 +312,6 @@ nav {
 .mobile-intro a:hover,
 .mobile-intro a::after {
     color: #c4b856!important;
-    ;
 }
 
 .mobile-intro a::after {
