@@ -1,0 +1,831 @@
+@import url('https://fonts.googleapis.com/css?family=Gupter&display=swap');
+
+
+/*================================================================
+Reset css 自定义和基础css
+===============================================================*/
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: var(--color-font-primary)
+}
+
+a:hover {
+    /* display: none; */
+    color: var(--color-font-primary) !important;
+}
+
+a:after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background: var(--color-font-primary) !important;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transition: all .25s;
+}
+
+a:hover:after {
+    left: 0;
+    width: 100%;
+}
+
+a.active:after {
+    left: 0;
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+input,
+fieldset,
+textarea {
+    outline: none;
+    border: none;
+}
+
+/*================================================================
+typography
+===============================================================*/
+html,
+body {
+    /* dark mode colors*/
+    --color-dark-primary: #424242;
+    --color-dark-secondary: #757575;
+    --color-dark-teriary: #eee;
+    /* don' use it with light bg because it's too white*/
+    --color-darkmode-font: #fff;
+    
+
+    /*light mode colors*/
+    --color-background-primary: #eee;
+    /* 主要背景色 */
+    --color-background-secondary: #bdbdbd;
+    /* 次要背景色 */
+    --color-font-primary: #212121;
+    /* 主要字体颜色 */
+    --color-font-secondary: #616161;
+    /* 次要字体颜色 */
+    --color-line-grey: #7e7e7e;
+    --box-shadow: 1px 1px 30px 2px #999;
+    ;
+    font-family: Gupter, serif, "Arial";
+    background: var(--color-background-primary);
+    color: var(--color-font-primary);
+
+    --size-ratio: 1.01;
+    --size-one-down: calc( 1rem / var(--size-ratio) );
+    --size-five-up: calc( var(--size-four-up)* var(--size-ratio) );
+    --size-four-up: calc( var(--size-three-up) * var(--size-ratio) );
+    --size-three-up: calc( var(--size-two-up) * var(--size-ratio) );
+    --size-two-up: calc( var(--size-one-up) * var(--size-ratio) );
+    --size-one-up: calc( 1rem * var(--size-ratio) );
+}
+
+h1 {
+    font-size: var(--size-five-up);
+}
+h2{
+    font-size: var(--size-four-up);
+}
+h3{;
+    font-size: var(--size-three-up);
+}
+h4{
+    font-size: var(--size-two-up);
+}
+h5{
+    font-size: var(--size-one-up);
+}
+h6{
+    font-size: var(--size-one-down);
+}
+
+/*================================================================
+header pc
+===============================================================*/
+
+header {
+    background: white;
+}
+
+.box-underline {
+    zoom: 1;
+}
+
+.box-underline:after {
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+    content: ".";
+}
+
+.logo-float-left {
+    float: left;
+    display: inline;
+}
+
+.logo-float-right {
+    float: right;
+    display: inline;
+}
+
+.logo-animation {
+    -webkit-transition: all 1.5s;
+    transition: all 1.5s;
+}
+
+.container {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    display: block;
+    line-height: 60px;
+    font-size: 24px;
+    ;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+nav {
+    display: block;
+}
+
+.div-for-lines nav ul li {
+    float: left;
+}
+
+.div-for-lines nav ul li a {
+    padding: 15px;
+    display: block;
+    font-size: 20px;
+}
+/*
+.navbtn {
+    position: relative;
+    width: 36px;
+    height: 40px;
+    display: none;
+}
+
+.navbtn .line {
+    width: 36px;
+    height: 6px;
+    background-color: red;
+    position: absolute;
+}
+
+.navbtn .line:before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: #272B2F;
+    position: absolute;
+    left: -10px;
+}
+
+.navbtn .line:first-child {
+    top: 0
+}
+
+.navbtn .line:nth-child(2) {
+    top: 16px;
+}
+
+.navbtn .line:nth-child(3) {
+    top: 32px;
+}*/
+
+
+
+/*================================================================
+    banner
+===============================================================*/
+
+.banner {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner .image {
+    width: 100%;
+    height: 100%;
+    background: url(images/banner.jpg) center center no-repeat;
+    background-size: cover;
+    animation: move 95s ease 0s infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.banner .intro {
+    display: block;
+    font-size: 24px;
+    z-index: 2;
+    position: relative;
+    width: 700px;
+    padding: 20px 10px;
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    background: rgba(225, 225, 225, 0.5);
+    height: auto;
+}
+
+.intro .share {
+    position: relative;
+}
+
+.share img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    /* bottom: 0; */
+    left: 0;
+    display: none;
+}
+
+.share:hover img {
+    display: block;
+}
+
+.banner .mobile-intro {
+    display: none;
+    font-size: 18px;
+    z-index: 2;
+    position: relative;
+    width: 400px;
+    padding: 20px 10px;
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-weight: bold;
+    ;
+    transform: translate(-50%, -50%);
+    background: rgba(225, 225, 225, 0.5);
+    height: auto;
+}
+
+.mobile-intro a,
+.mobile-intro a:hover,
+.mobile-intro a::after {
+    color: #c4b856!important;
+    ;
+}
+
+.mobile-intro a::after {
+    background: #c4b856!important;
+}
+
+
+/*================================================================
+    portfolio grid layout for pc
+===============================================================*/
+
+.grid-container {
+    display: grid;
+    width: 980px;
+    margin: 10px auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 10px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.grid-container .item {
+    background: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.grid-container .item span {
+    height: 100px;
+    position: absolute;
+    background: rgba(225, 225, 225, 0.5);
+    width: 100%;
+    bottom: -100px;
+    left: 0;
+    transition: all 0.5s;
+    padding: 25px 0 0 30px;
+    box-sizing: border-box;
+}
+
+.grid-container .item span h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.grid-container .item span p {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.grid-container .item:hover span {
+    bottom: 0;
+}
+
+.grid-container .item:hover {
+    box-shadow: var(--box-shadow);
+    margin-top: -5px;
+}
+
+
+/*================================================================
+    portfolio photo containers
+===============================================================*/
+.grid-container .item .img{
+    width: 100%;
+    height: 100%;
+    background-size: cover; 
+}
+
+
+.grid-container .item .img {
+    background: url(images/1-visual-design.jpg) top center no-repeat;
+}
+
+.grid-container .item:nth-child(2) .img {
+    background: url(images/2-responsive-design.jpg) top center no-repeat;
+}
+
+.grid-container .item:nth-child(3) .img {
+    background: url(images/3-user-research.jpg) top center no-repeat;
+}
+
+.grid-container .item:nth-child(4) .img {
+    background: url(images/4-interaction-design.jpg) top center no-repeat;
+}
+
+.grid-container .item:nth-child(5) .img {
+    background: url(images/5-portfolio-design.jpg) top center no-repeat;
+}
+
+.grid-container .item:nth-child(6) .img {
+    background: url(images/6-user-interface-design.jpg) top center no-repeat;
+}
+
+.grid-container .item:nth-child(7) .img {
+    background: url(images/7-ux-lab.jpg) top center no-repeat;
+}
+
+.grid-container .item:nth-child(8) .img {
+    background: url(images/8-design-ideation.jpg) top center no-repeat;
+}
+
+.grid-container .item:nth-child(9) .img {
+    background: url(images/9-typography-design.jpg) top center no-repeat;
+}
+
+.grid-container .item:nth-child(10) .img {
+    background: url(images/10-fine-art.jpg) top center no-repeat;
+}
+
+.grid-container .item:nth-child(11) .img {
+    background: url(images/11-photography.jpg) top center no-repeat;
+}
+
+.grid-container .item:nth-child(12) .img {
+    background: url(images/12-user-centered-design.jpg) top center no-repeat;
+    
+}
+
+
+
+/*================================================================
+    Resume 
+===============================================================*/
+
+.resume-container {
+    padding: 20px 0;
+    background: url(./images/mask.png) top center repeat-y;
+    background-size: cover;
+    margin: 50px auto;
+}
+
+.item-container {
+    margin-left: 70px;
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px;
+    grid-template-rows: 100px 100px;
+    grid-auto-rows: 50px;
+}
+
+.item {
+    font-size: 3em;
+    /* text-align: center; */
+    color: var(--color-font-primary);
+}
+
+.item-1 {
+    color: var(--color-font-secondary);
+}
+
+.item-2 {
+    color: var(--color-font-secondary);
+}
+
+.item-3 {
+    color: var(--color-font-secondary);
+}
+
+.item-4 {
+    grid-row-start: 2;
+    grid-column-start: 1;
+}
+
+.item-5 {
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+
+.item-6 {
+    grid-row-start: 2;
+    grid-column-start: 3;
+}
+
+.item-7 {
+    grid-row-start: 2;
+    grid-column-start: 4
+}
+
+.item-8 {
+    grid-row-start: 2;
+    grid-column-start: 5;
+}
+
+.item-9 {
+    grid-row-start: 2;
+    grid-column-start: 6;
+}
+
+.line1 {
+    background: var(--color-line-grey);
+    height: 2px;
+    width: calc(100% - 60px);
+    margin-bottom: 60px;
+    margin-top: 10px;
+    ;
+}
+
+.layut-one {
+    width: calc(100% - 130px);
+    margin-left: 70px;
+    box-sizing: border-box;
+    /* padding-top: 50px;
+        padding-bottom: 50px; */
+    padding-bottom: 50px;
+    border-bottom: 2px solid var(--color-line-grey);
+    /* height: 150px; */
+    overflow: hidden;
+}
+
+.intro {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 300px;
+    /* border-right: 1px solid #7e7e7e; */
+    justify-content: space-between;
+    float: left;
+    height: 150px;
+    position: relative;
+}
+
+.intro:after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-color: var(--color-line-grey);
+}
+
+.summary {
+    float: left;
+    width: 460px;
+    margin-left: 30px;
+    ;
+}
+
+.summary h2 {
+    margin-bottom: 20px;
+}
+
+.layout-two {
+    width: calc(100% - 130px);
+    margin-left: 70px;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+    /* border-bottom: 2px solid #7e7e7e; */
+    overflow: hidden;
+    /* height: 500px; */
+    margin-top: 50px;
+}
+
+.edu {
+    float: left;
+    width: 300px;
+    position: relative;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 50px;
+    box-sizing: border-box;
+}
+
+.edu:after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    right: 0;
+    top: 35px;
+    background-color: #7e7e7e;
+}
+
+.job {
+    float: left;
+    width: 460px;
+    margin-left: 20px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/*================================================================
+footer
+===============================================================*/
+
+.site-footer {
+    width: 980px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.site-copyright {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.site-social {
+    margin-bottom: 15px;
+}
+
+.site-social a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 3px 6px 3px;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.site-social a:hover {
+    background-color: #272B2F;
+    color: white;
+}
+
+.site-social:hover::after {
+    width: 0!important;
+}
+
+.site-social a:hover svg {
+    fill: white;
+}
+
+.site-social svg {
+    position: relative;
+    top: 5px;
+}
+
+.site-copyright-light-font{
+    color: var(--color-dark-teriary);
+}
+
+
+/*================================================================
+  contact  for PC
+===============================================================*/
+
+.contact-container {
+    width: 400px;
+    margin: 60px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-background-secondary);
+    font-size: 16px;
+    box-shadow: var(--box-shadow);
+    background: var(--color-darkmode-font);
+}
+
+.contact-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    display: block;
+    border: 1px solid var(--color-background-secondary)
+}
+
+.contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--color-background-secondary)
+}
+
+.contact-container .submit {
+    width: auto;
+    margin: 20px auto;
+    background: var(--color-darkmode-font);
+    transition: all 0.3s
+}
+
+.contact-container .submit:hover {
+    background: var(--color-background-secondary);
+    color: var(--color-darkmode-font)
+}
+
+@media only screen and (max-width:979px) {
+    /*================================================================
+    header for ipad
+    ===============================================================*/
+    .container {
+        width: auto;
+        padding: 0 38px
+    }
+    .div-for-lines {
+        padding: 10px 0
+    }
+    .link-underline:hover {
+        /* display: none; */
+        color: white !important;
+    }
+    /* banner */
+    .banner .intro {
+        display: none;
+    }
+    .banner .mobile-intro {
+        display: block;
+    }
+    .site-footer {
+        max-width: 768px;
+    }
+    /*================================================================
+    Portfolio grid layout for ipad
+    ===============================================================*/
+    .grid-container {
+        display: grid;
+        width: 768px;
+        margin: 10px auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 10px;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    /*================================================================
+    Resume  for ipad  & mobile
+    ===============================================================*/
+    .item-container {
+        display: none;
+    }
+    .resume-container h2,
+    .resume-container h3 {
+        text-align: center;
+    }
+    .layut-one {
+        width: 100%;
+        margin-left: 0;
+    }
+    .layout-two {
+        width: 100%;
+        margin-left: 0;
+    }
+    .intro:after {
+        display: none;
+    }
+    .intro {
+        float: none;
+        margin: 0 auto 30px;
+        text-align: center;
+        width: auto;
+    }
+    .summary {
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+        width: auto;
+    }
+    .edu {
+        padding-right: 0;
+        float: none;
+        margin: 0 auto 30px;
+        text-align: center;
+        width: auto;
+    }
+    .edu:after {
+        display: none;
+    }
+    .job {
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width:759px) {
+    /*================================================================
+        header for mobile
+        ===============================================================*/
+    .container {
+        width: auto;
+        padding: 0 20px
+    }
+    .logo {
+        font-size: 14px;
+    }
+    .div-for-lines nav ul li a {
+        font-size: 12px;
+        padding: 8px;
+        ;
+    }
+    /* .div-for-lines nav ul li {
+        width: auto;
+        margin: 0 20px;
+    } */
+    .banner {
+        height: 400px;
+    }
+    .site-footer {
+        max-width: 100%;
+    }
+    /*================================================================
+        Portfolio grid layout for mobile
+        ===============================================================*/
+    .grid-container {
+        padding: 50px 20px;
+        display: grid;
+        box-sizing: border-box;
+        max-width: 100%;
+        margin: 10px auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: 10px;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    /*================================================================
+    Contact for mobile
+        ===============================================================*/
+    .contact-container {
+        margin: 50px auto;
+        width: 80%;
+    }
+}
